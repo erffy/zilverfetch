@@ -13,7 +13,11 @@ pub fn build(b: *std.Build) void {
             .target = target,
             .optimize = optimize,
         }),
+        .use_llvm = true,
+        .use_lld = true,
     });
+
+    exe.lto = .full;
 
     b.installArtifact(exe);
 
