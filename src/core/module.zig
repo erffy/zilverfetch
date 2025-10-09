@@ -11,7 +11,6 @@ pub const Module = struct {
     /// Run fetch and print formatted output
     pub fn run(self: Module, allocator: mem.Allocator, writer: anytype) !void {
         const value = try self.fetchFn(allocator);
-        defer allocator.free(value);
         try writer.print("{s}: {s}\n", .{ self.name, value });
     }
 };

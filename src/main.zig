@@ -2,6 +2,8 @@ const std = @import("std");
 const heap = std.heap;
 const fs = std.fs;
 
+const Module = @import("core/module.zig").Module;
+
 // Import modules
 const osmod = @import("modules/os.zig");
 const memmod = @import("modules/memory.zig");
@@ -15,7 +17,7 @@ pub fn main() !void {
     var stdout_writer = fs.File.stdout().writer(&stdout_buffer);
     const stdout = &stdout_writer.interface;
 
-    const modules = [_]@import("core/module.zig").Module{
+    const modules = [_]Module{
         osmod.module,
         memmod.module,
             // add more here, e.g. cpumod.module, memmod.module

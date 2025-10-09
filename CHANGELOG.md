@@ -2,6 +2,7 @@
 
 ### master
 
+- refactor: simplify Module import
 - feat(memory): implement Memory information fetching
 - refactor(os): improve code
 - feat(os): implement basic OS information fetching
